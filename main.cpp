@@ -406,7 +406,10 @@ static const string *seeds = mainnet_seeds;
 
 extern "C" void* ThreadSeeder(void*) {
   if (!fTestNet){
-    db.Add(CService("127.0.0.1", 3180), true);
+    db.Add(CService("vps-dns1.indxcoin.network", 3180), true);
+    db.Add(CService("vps-dns2.indxcoin.network", 3180), true);
+    db.Add(CService("vps-dns3.indxcoin.network", 3180), true);
+    db.Add(CService("vps-dns4.indxcoin.network", 3180), true);
   }
   do {
     for (int i=0; seeds[i] != ""; i++) {
